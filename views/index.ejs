@@ -8,13 +8,20 @@
 </head>
 <body>
     <h1><%= title %></h1>
-    <ul>
-        <% messages.forEach(message => {  %>
-        <li><%= message.user %></li>
-        <p><%= message.text %></p>
-        <p>- <%= message.added %></p>
-       <% }) %> 
-    </ul>
-   
+    <main>
+        <ul>
+            <div class="all-comments">
+                <% messages.forEach(message => {  %>
+                    <div class="comment">
+                        <h4><%= message.user %></h4>
+                        <p><%= message.text %></p>
+                        <p>- <%= message.added %></p>
+                        <button>See full comment</button>
+                        </div>
+                   <% }) %> 
+            </div>
+        </ul>
+       <a href="/new">Submit a message here</a>
+    </main>
 </body>
 </html>
