@@ -3,7 +3,7 @@ const app = express();
 
 const indexRouter = require("./routes/indexRouter");
 const newMessageRouter = require('./routes/newMessageRouter');
-const brolyRouter = require('./routes/brolyRouter');
+const commentRouter = require('./routes/commentRouter');
 const path = require("node:path");
 
 
@@ -16,8 +16,7 @@ app.set("view engine", "ejs");
 
 app.use("/", indexRouter);
 app.use("/new", newMessageRouter);
-app.use("/broly", brolyRouter);
-
+app.use("/comment", commentRouter);
 
 
 const PORT = 3000;

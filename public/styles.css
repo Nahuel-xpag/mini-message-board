@@ -6,15 +6,19 @@ h1 {
     text-align: center;
     padding-top: 25px;
     background-color: rgb(185, 219, 249);
+    text-shadow: 0 0 2px rgb(255, 255, 255);
     margin: 0;
     height: 65px;
 }  
 .all-comments {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     color: #FFFFFF;
+    text-shadow: 0 0 1.5px black;
 }
 .comment {
+    width: 30%;
     border: 1px dotted rgb(34, 34, 34);
     border-radius: 12px;
     padding: 8px;
@@ -22,4 +26,33 @@ h1 {
 }
 .comment h4 {
     font-size: 22px;
-} 
+}
+.comment-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.comment-body a{
+    align-self: flex-start;
+    font-size: 24px;
+    text-decoration: none;
+}
+.full-comment {
+    background-color: #FFFFFF;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 400px;
+    border: 1px solid black;
+}
+.full-comment p {
+    flex-grow: 1;
+}
+.full-comment .date{
+    flex-grow: 0;
+    text-align: center;
+}

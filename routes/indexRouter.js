@@ -1,25 +1,12 @@
-const { Router } = require('express');
-
+const { Router } = require("express");
 const indexRouter = Router();
+const db = require('../db');
+const {getMessages} =  require("../controllers/indexController");
 
-const messages = [
-    {
-        text: "Hi there!",
-        user: "Amando",
-        added: new Date()
-    },
-    {
-        text: "Hello World!",
-        user: "Charles",
-        added: new Date()
-    }
-];
 
-indexRouter.get("/", (req, res) => {
-    res.render("index", {title: "Mini Messageboard", messages: messages})
-})
+indexRouter.get("/", getMessages);
 indexRouter.post("/new", (req, res) => {
-    messages.push({ text: req.body.messageText, user: req.body.messageUser, added: new Date() });
+    db.addMessage(req.body.messageText, req.body.messageUser, new Date().toString().slice(0,21));
     res.redirect("/");
 })
 
